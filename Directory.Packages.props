@@ -4,4 +4,8 @@
         <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
         <CentralPackageVersionOverrideEnabled>true</CentralPackageVersionOverrideEnabled>
     </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Nuke.Common" Version="8.0.0" />
+  </ItemGroup>
 </Project>
