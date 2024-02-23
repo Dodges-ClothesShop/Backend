@@ -9,9 +9,17 @@
 
   <PropertyGroup>
     <CompanyName>Dodges</CompanyName>
+    <ProjectName>ClothesShop</ProjectName>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
     <Copyright>Copyright $(CurrentYear) © $(CompanyName). All rights reserved</Copyright>
     <Authors>Trofimov Alexander</Authors>
     <Company>$(CompanyName)</Company>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>$(CompanyName).$(ProjectName).$(MsBuildProjectName)</RootNamespace>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Testing.targets"/>
+
 </Project>
