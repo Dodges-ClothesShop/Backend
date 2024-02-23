@@ -1,11 +1,18 @@
 <Project>
     <PropertyGroup>
-        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
-        <CentralPackageVersionOverrideEnabled>true</CentralPackageVersionOverrideEnabled>
+      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+      <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+      <CentralPackageVersionOverrideEnabled>true</CentralPackageVersionOverrideEnabled>
     </PropertyGroup>
 
   <ItemGroup>
     <PackageVersion Include="Nuke.Common" Version="8.0.0" />
+    <!--Пакеты для тестов-->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0"/>
+    <PackageVersion Include="xunit" Version="2.7.0"/>
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.7"/>
+    <PackageVersion Include="coverlet.collector" Version="6.0.1"/>
+    <PackageVersion Include="Moq" Version="4.20.70" />
+    <PackageVersion Include="FluentAssertions" Version="6.12.0" />
   </ItemGroup>
 </Project>
