@@ -21,5 +21,4 @@
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)Directory.Testing.targets"/>
-
 </Project>

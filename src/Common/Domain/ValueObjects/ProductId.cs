@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Dodges.ClothesShop.Common.Domain.Constants;
-using Dodges.ClothesShop.Domain.Common.Utils;
+using Dodges.ClothesShop.Common.Utils;
 
 namespace Dodges.ClothesShop.Common.Domain.ValueObjects;
 
