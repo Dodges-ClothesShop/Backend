@@ -1,4 +1,4 @@
-namespace Dodges.ClothesShop.Domain.Common.Utils;
+namespace Dodges.ClothesShop.Common.Utils;
 
 public static class IdGenerator
 {
@@ -17,13 +17,13 @@ public static class IdGenerator
 
     private static string NewId()
     {
-        var uniq = Guid.NewGuid();
-        var encoded = Base64UrlEncode(uniq);;
+        var id = Guid.NewGuid();
+        var encoded = Base64UrlEncode(id);;
         return encoded;
     }
 
-    private static string Base64UrlEncode(Guid uniq) =>
-        Convert.ToBase64String(uniq.ToByteArray())
+    private static string Base64UrlEncode(Guid id) =>
+        Convert.ToBase64String(id.ToByteArray())
             .Replace('+', '-')
             .Replace('/', '_')
             .Replace("=", "");
