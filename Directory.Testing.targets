@@ -1,9 +1,10 @@
 <Project>
 
   <ItemGroup Condition=" '$(SignAssembly)' != 'True'">
-    <InternalsVisibleTo Include="UnitTests"/>
-    <InternalsVisibleTo Include="IntegrationTests"/>
-    <InternalsVisibleTo Include="ArchitectureTests"/>
+    <InternalsVisibleTo Include="Domain.UnitTests"/>
+    <InternalsVisibleTo Include="Application.IntegrationTests"/>
+    <InternalsVisibleTo Include="Application.UnitTests"/>
+    <InternalsVisibleTo Include="Solution.UnitTests"/>
   </ItemGroup>
 
   <ItemGroup Condition="$(MSBuildProjectName.EndsWith(Tests))">
@@ -21,4 +22,8 @@
     <PackageReference Include="FluentAssertions" />
   </ItemGroup>
 
+  <ItemGroup Condition="$(MSBuildProjectName.EndsWith(Tests))">
+    <Using Include="Xunit"/>
+    <Using Include="FluentAssertions"/>
+  </ItemGroup>
 </Project>
