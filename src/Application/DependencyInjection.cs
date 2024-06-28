@@ -4,8 +4,6 @@ namespace Dodges.ClothesShop.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApplication(this IServiceCollection services)
-    {
-        return services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(ApplicationAssemblyReference.Assembly));
-    }
+    public static IServiceCollection AddApplication(this IServiceCollection services) =>
+        services.AddMediatR(configuration => configuration.RegisterServicesFromAssembly(ApplicationAssemblyReference.Assembly));
 }

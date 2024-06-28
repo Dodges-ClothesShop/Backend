@@ -6,7 +6,7 @@ public static class IdGenerator
 
     public static string NewId(string prefix)
     {
-        if (!prefix.EndsWith(PrefixSeparator))
+        if (prefix.EndsWith(PrefixSeparator) is false)
         {
             prefix += PrefixSeparator;
         }
