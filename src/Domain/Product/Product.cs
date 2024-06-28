@@ -5,7 +5,7 @@ namespace Dodges.ClothesShop.Domain.Product;
 
 public sealed class Product : IHaveId<ProductId>
 {
-    private Product(ProductId id)
+    public Product(ProductId id)
     {
         Id = id;
     }
