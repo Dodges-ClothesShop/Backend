@@ -2,8 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Dodges.ClothesShop.Common.Domain.ValueObjects;
 
-public abstract class Id<TId> : IEquatable<TId>
-    where TId : Id<TId>, IId<TId>
+public abstract class Id<TId> : IId<TId> where TId : Id<TId>
 {
     private protected Id(string value)
     {
@@ -17,7 +16,7 @@ public abstract class Id<TId> : IEquatable<TId>
     protected static bool TryParse(string? text, string prefix, Func<string, TId> idFactory, [NotNullWhen(true)] out TId? id)
     {
         text = text?.Trim();
-        if (string.IsNullOrWhiteSpace(text) || !text.StartsWith(prefix))
+        if (string.IsNullOrWhiteSpace(text) || text.StartsWith(prefix) is false)
         {
             id = default;
             return false;
@@ -26,6 +25,7 @@ public abstract class Id<TId> : IEquatable<TId>
         id = idFactory(text);
         return true;
     }
+
 
     protected static string FormatPrefix(string boundedContextName, string entityType) =>
         $"{boundedContextName}-{entityType}-";
@@ -56,14 +56,20 @@ public abstract class Id<TId> : IEquatable<TId>
     public static bool operator !=(Id<TId>? left, Id<TId>? right) => !Equals(left, right);
 
     #endregion Equatable Members
+
+    public static bool TryParse(string? text, [NotNullWhen(true)] out TId? id) => throw new NotImplementedException();
+
+    public static TId Parse(string? text) => throw new NotImplementedException();
 }
 
-public interface IId<TId> where TId: IId<TId>
+public interface IId<TId>: IId, IParsable<TId>, IEquatable<TId> where TId: IId<TId>
 {
-    static abstract string Prefix { get; }
     static abstract bool TryParse(string? text, [NotNullWhen(true)] out TId? id);
 
     static abstract TId Parse(string? text);
+}
 
-    static abstract TId New();
+public interface IId
+{
+    string Value { get; }
 }

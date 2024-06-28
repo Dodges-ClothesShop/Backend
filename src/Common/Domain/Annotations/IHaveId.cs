@@ -1,6 +1,6 @@
 namespace Dodges.ClothesShop.Common.Domain.Annotations;
 
-public interface IHaveId<out TId> : IDomainEntity
+public interface IHaveId<out TId>
 {
     public TId Id { get; }
 }

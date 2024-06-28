@@ -6,5 +6,6 @@ internal sealed class CreateProductCommandHandler : IRequestHandler<CreateProduc
 {
     public async Task Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
+
     }
 }
