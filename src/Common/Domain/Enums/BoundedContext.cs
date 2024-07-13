@@ -6,3 +6,4 @@ public enum BoundedContext
     Identity = 2,
     Administration = 3,
 }
+
